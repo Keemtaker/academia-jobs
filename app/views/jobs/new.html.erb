@@ -1,0 +1,88 @@
+<%= simple_form_for @job, html: { class: 'form-horizontal' },wrapper: :horizontal_form do |f| %>
+  <div class="container">
+    <br>
+    <h1>Job Details</h1>
+    <br>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :employer,  :label => "Name of Academic Institution", required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :email,  :label => "Contact Email", required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :title,  :label => "Job title" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :description, as: :rich_text_area, :label => "Job Description" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :city, :label => "Job location" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :country, priority: [ "United Kingdom" ], :label => "Country" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :address, :label => "Address" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :job_type, collection: ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant" ], :label => "Job Type" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :application_deadline, as: :date, html5: true, input_html: { value: (Time.now + 60.days).strftime('%Y-%m-%d'), min: Time.now.strftime('%Y-%m-%d'),
+        max: (Time.now + 120.days).strftime('%Y-%m-%d')}, :label => "Expiration of job posting"  %>
+      </div>
+    </div>
+
+    <div class="form-group form-group--inactive show-job-url">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :job_application_url, :label => "Job Url", placeholder: "Applicants will go to the URL you specify to apply for this job.", required: true %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.button :submit, "Submit", class: "btn btn-md btn-block btn-success" %>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>
