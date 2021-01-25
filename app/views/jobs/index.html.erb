@@ -1,0 +1,24 @@
+
+<% @jobs.all.each do | job | %>
+  <div class="container">
+    <div class="col-md-8">
+      <div class="card" style="margin-bottom: 30px;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-2" style="align-self: center;">
+              <%= image_tag "fallback.png", class: "show-logo" %>
+            </div>
+            <div class="col-sm-8" style="margin-top: 15px;">
+              <h5><%= job.title %></h5>
+              <span class="job-info">
+                <h5 style="color: #5DB1D1;"><%= job.employer %></h5>
+                <h5><%= job.country %></h5>
+                <h5><%= job.city %></h5>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
