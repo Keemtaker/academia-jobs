@@ -42,6 +42,20 @@
     <div class="form-group">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
+        <%= f.input :country, priority: [ "United Kingdom" ], :label => "Country" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :address, :label => "Address" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
         <%= f.input :job_type, collection: ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant" ], :label => "Job Type" %>
       </div>
     </div>
@@ -50,6 +64,13 @@
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
         <%= f.input :job_application_url, :label => "Job Url", placeholder: "Applicants will go to the URL you specify to apply for this job.", required: true %>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.button :submit, "Submit", class: "btn btn-md btn-block btn-success" %>
       </div>
     </div>
   </div>
