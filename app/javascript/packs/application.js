@@ -3,6 +3,10 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -54,3 +58,26 @@ $(document).on('turbolinks:load', function(){
     readURL(this);
   });
 })
+
+
+$(document).on('turbolinks:load', function(){
+  $(".jobs_search input").keyup(function() {
+    $.get($(".jobs_search").attr("action"), $(".jobs_search").serialize(), null, "script");
+    return false;
+  });
+})
+
+$(document).on('turbolinks:load', function(){
+  $(".jobs_search_mobile input").keyup(function() {
+    $.get($(".jobs_search_mobile").attr("action"), $(".jobs_search_mobile").serialize(), null, "script");
+    return false;
+  });
+})
+
+$(document).on('turbolinks:load', function(){
+  $('input[type="checkbox"]').change(function() {
+      $.get($(".filters_click").attr("action"), $(".filters_click").serialize(), null, "script");
+      return false;
+  });
+})
+

@@ -1,0 +1,50 @@
+<div class="col-sm-3 d-none d-sm-block">
+  <%= search_form_for @search, :class => 'jobs_search' do |f| %>
+    <%= f.search_field :job_type_or_city_or_title_cont, placeholder: " search" %>
+  <% end %>
+  <br>
+  <% job_roles = ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant"] %>
+  <%= search_form_for @search, :class => 'filters_click' do |f| %>
+    <h4>Job Type</h4>
+    <% job_roles.each do |role| %>
+      <div class="styled-input-container">
+        <a>
+          <label>
+            <%= check_box_tag('q[job_type_eq_any][]', role) %>
+            <%= role %>
+          </label>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="col-sm-6 d-block d-sm-none">
+  <%= search_form_for @search, :class => 'jobs_search_mobile' do |f| %>
+    <%= f.search_field :job_type_or_city_or_title_cont, placeholder: " search" %>
+  <% end %>
+  <br>
+  <div class="dropdown">
+    <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #167FFB">
+      Job Type
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <% job_roles = ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant"] %>
+      <ul class="list-group">
+        <%= search_form_for @search, :class => 'filters_click' do |f| %>
+          <% job_roles.each do |role| %>
+            <li class="list-group-item">
+              <a class="dropdown-item">
+                <label>
+                  <%= check_box_tag('q[job_type_eq_any][]', role) %>
+                  <%= role %>
+                </label>
+              </a>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <br>
+</div>

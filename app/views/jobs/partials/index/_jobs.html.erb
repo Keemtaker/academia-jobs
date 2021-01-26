@@ -1,0 +1,27 @@
+<div class="jobs-index">
+  <% @jobs.each do |job| %>
+    <%= link_to job_path(job) do %>
+      <div class="card" style="margin-bottom: 30px;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-2" style="align-self: center;">
+              <% if job.logo.attached? %>
+                <%= cl_image_tag job.logo.key, class: "show-logo" %>
+              <% else %>
+                <%= image_tag "fallback.png", class: "show-logo" %>
+              <% end %>
+            </div>
+            <div class="col-sm-8" style="margin-top: 15px;">
+              <h5><%= job.title %></h5>
+              <span class="job-info">
+                <h5 style="color: #5DB1D1;"><%= job.employer %></h5>
+                <h5><%= job.city %></h5>
+                <h5><%= job.country_name %></h5>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

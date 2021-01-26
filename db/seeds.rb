@@ -32,9 +32,9 @@ Requirements
 
 
 job_list = [
-  {title: "Postdoctoral Researcher in Biostatistics", description: description, employer: "Karolinska Institutet", country: "SWeden", city: "Stockholm"},
-  {title: "PHD fellow", description: description, employer: "Arhus University", country: "Denmark", city: "Arhus"},
-  {title: "Lecturer", description: description, employer: "University of Ghana", country: "Ghana", city: "Accra"}
+  {title: "Postdoctoral Researcher in Biostatistics", description: description, employer: "Karolinska Institutet", country: "DK", city: "Stockholm"},
+  {title: "PHD fellow", description: description, employer: "Arhus University", country: "DK", city: "Arhus"},
+  {title: "Lecturer", description: description, employer: "University of Ghana", country: "DK", city: "Accra"}
 ]
 
 Job.create!(job_list)
