@@ -33,6 +33,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'country_select'
 gem 'cloudinary'
+gem 'ransack'
 
 group :development, :test do
   gem 'pry-byebug'
