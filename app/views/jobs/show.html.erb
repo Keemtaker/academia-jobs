@@ -1,0 +1,43 @@
+<br>
+<br>
+<div class="container">
+  <div class="card bg-transparent" style="border: none !important;">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-2" style="margin-bottom: 30px;">
+          <% if @job.logo.attached? %>
+            <%= cl_image_tag @job.logo.key, class: "show-logo" %>
+          <% else %>
+            <%= image_tag "fallback.png", class: "show-logo" %>
+          <% end %>
+        </div>
+        <div class="col-sm-8">
+          <h1><%= @job.title %></h1>
+          <span class="job-info">
+            <h3 style="color: #5DB1D1;"><%= @job.employer %></h3>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="col-md-10">
+    <%= link_to "Apply", @job.job_application_url, :target => "_blank", class: "btn btn-success btn-lg fas fa-external-link-alt" %>
+  </div>
+  <br>
+
+  <div class="col-md-12">
+    <span style="color: #5DB1D1;"><i class="fas fa-globe" aria-hidden="true"></i> <%= @job.city %>, <%= @job.country_name %> </span>
+  </div>
+
+<div style="margin-top: 40px;" class="col-md-10">
+ <%= @job.description %>
+</div>
+<br>
+<br>
+
+
+
+</div>
+
