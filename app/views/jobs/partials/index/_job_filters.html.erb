@@ -17,6 +17,23 @@
       </div>
     <% end %>
   <% end %>
+  <br>
+  <% job_fields = ["Agricultural Science", "Anthropology", "Architecture and Design", "Arts and Culture", "Biology", "Business and Economics", "Chemistry",
+          "Computer Science", "Education", "Engineering", "Geosciences", "History", "Law", "Linguistics", "Literature", "Mathematics", "Medicine", "Philosophy",
+          "Physics", "Political Science", "Psychology", "Social Science", "Space Science", "Theology"] %>
+  <%= search_form_for @search, :class => 'filters_click' do |f| %>
+    <h4>Job Fields</h4>
+    <% job_fields.each do |field| %>
+      <div class="styled-input-container">
+        <a>
+          <label>
+            <%= check_box_tag('q[job_field_eq_any][]', field) %>
+            <%= field %>
+          </label>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="col-sm-6 d-block d-sm-none">

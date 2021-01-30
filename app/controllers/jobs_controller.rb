@@ -42,12 +42,13 @@ class JobsController < ApplicationController
   end
 
   def show
+    @job = Job.find(params[:id])
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :employer, :job_type, :email, :job_application_url, :address, :country, :city, :continent, :application_deadline, :logo)
+    params.require(:job).permit(:title, :description, :employer, :job_type, :email, :job_application_url, :address, :country, :city, :continent, :application_deadline, :job_field, :logo)
   end
 
 end
