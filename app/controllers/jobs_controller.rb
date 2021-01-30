@@ -30,7 +30,7 @@ class JobsController < ApplicationController
       cancel_url: root_url,
     })
 
-      @job.update(continent: session.id)
+      @job.update(checkout_session_id: session.id)
       redirect_to job_payment_url(@job.id)
     else
       render :new
