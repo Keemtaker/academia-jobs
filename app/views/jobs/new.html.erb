@@ -60,6 +60,15 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <label class="col-md-1 control-label"></label>
+      <div class="col-md-9">
+        <%= f.input :job_field, collection: ["Agricultural Science", "Anthropology", "Architecture and Design", "Arts and Culture", "Biology", "Business and Economics", "Chemistry",
+          "Computer Science", "Education", "Engineering", "Geosciences", "History", "Law", "Linguistics", "Literature", "Mathematics", "Medicine", "Philosophy",
+          "Physics", "Political Science", "Psychology", "Social Science", "Space Science", "Theology"], :label => "Job Field" %>
+      </div>
+    </div>
+
     <div class="form-group form-group--inactive show-job-url">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
