@@ -34,6 +34,9 @@ gem 'simple_form'
 gem 'country_select'
 gem 'cloudinary'
 gem 'ransack'
+gem 'stripe'
+gem 'stripe_event'
+
 
 group :development, :test do
   gem 'pry-byebug'

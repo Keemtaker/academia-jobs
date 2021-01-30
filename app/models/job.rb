@@ -3,6 +3,8 @@ class Job < ApplicationRecord
   has_one_attached :logo
   after_validation :set_slug, only: [:create, :update]
 
+  validates :employer, presence: true
+
   def to_param
     "#{id}-#{slug}"
   end
