@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'jobs#index'
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
   resources :jobs do
     get 'payment', to: 'jobs#payment'
   end
