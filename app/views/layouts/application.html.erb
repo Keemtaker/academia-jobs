@@ -12,6 +12,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/navbar' %>
+    <table class="layout-table">
+      <tr class="layout-content-row">
+        <td class="layout-content-column">
+          <%= yield %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= render 'shared/footer' %>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
