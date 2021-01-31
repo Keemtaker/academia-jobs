@@ -1,46 +1,52 @@
-// Specific CSS for your home-page
-
-a {
-  text-decoration: none !important;
+:root {
+  --jumbotron-padding-y: 3rem;
 }
 
-.show-logo {
-  width: 80px;
+.jumbotron-home {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron-home {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
 }
 
-trix-editor.form-control {
-  height: auto;
+.jumbotron-home p:last-child {
+  margin-bottom: 0;
 }
 
-.upload-logo {
-  border: 1px solid #d3d3d3;
-  padding: 16px 24px;
-  cursor: pointer;
-  font-weight: 500;
-  background: white;
-  border-radius: 2px;
+.jumbotron-heading {
+  font-weight: 300;
 }
 
-.job-info h3 {
-  font-size: 16px;
-  color: #9DA3AF;
-  font-weight: 500;
-  margin-right: 5px;
-  display: inline-block;
+.jumbotron-home .container {
+  max-width: 40rem;
 }
 
-.job-info h3:before {
-    content:"• ";
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 240px 0;
 }
 
-.job-info h5 {
-  font-size: 13px;
-  color: #9DA3AF;
-  font-weight: 500;
-  margin-right: 5px;
-  display: inline-block;
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
 }
 
-.job-info h5:before {
-    content:"• ";
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }

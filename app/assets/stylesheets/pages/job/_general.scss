@@ -1,0 +1,46 @@
+// Specific CSS for your home-page
+
+a {
+  text-decoration: none !important;
+}
+
+.show-logo {
+  width: 80px;
+}
+
+trix-editor.form-control {
+  height: auto;
+}
+
+.upload-logo {
+  border: 1px solid #d3d3d3;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 2px;
+}
+
+.job-info h3 {
+  font-size: 16px;
+  color: #9DA3AF;
+  font-weight: 500;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.job-info h3:before {
+    content:"• ";
+}
+
+.job-info h5 {
+  font-size: 13px;
+  color: #9DA3AF;
+  font-weight: 500;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.job-info h5:before {
+    content:"• ";
+}
