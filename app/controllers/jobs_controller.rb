@@ -26,8 +26,8 @@ class JobsController < ApplicationController
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: root_url,
-      cancel_url: root_url,
+      success_url: "#{success_url}?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: "#{cancel_url}?session_id={CHECKOUT_SESSION_ID}",
     })
 
       @job.update(checkout_session_id: session.id)
@@ -43,6 +43,18 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+  end
+
+  def success
+    @job = Job.find_by(checkout_session_id: params[:session_id])
+    redirect_to job_path(@job)
+    flash[:notice] = "You have successfully posted a Job"
+  end
+
+  def cancel
+    @job = Job.find_by(checkout_session_id: params[:session_id])
+    redirect_to root_path
+    flash[:alert] = "The Job posting did not complete successfully. You can try again or contact us for support"
   end
 
   private

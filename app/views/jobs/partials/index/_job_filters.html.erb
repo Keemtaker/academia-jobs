@@ -3,7 +3,7 @@
     <%= f.search_field :job_type_or_city_or_title_cont, placeholder: " search" %>
   <% end %>
   <br>
-  <% job_roles = ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant"] %>
+  <% job_roles = ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant", "Other"] %>
   <%= search_form_for @search, :class => 'filters_click' do |f| %>
     <h4>Job Type</h4>
     <% job_roles.each do |role| %>
@@ -20,7 +20,7 @@
   <br>
   <% job_fields = ["Agricultural Science", "Anthropology", "Architecture and Design", "Arts and Culture", "Biology", "Business and Economics", "Chemistry",
           "Computer Science", "Education", "Engineering", "Geosciences", "History", "Law", "Linguistics", "Literature", "Mathematics", "Medicine", "Philosophy",
-          "Physics", "Political Science", "Psychology", "Social Science", "Space Science", "Theology"] %>
+          "Physics", "Political Science", "Psychology", "Social Science", "Space Science", "Theology", "Other"] %>
   <%= search_form_for @search, :class => 'filters_click' do |f| %>
     <h4>Job Fields</h4>
     <% job_fields.each do |field| %>
@@ -46,7 +46,7 @@
       Job Type
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% job_roles = ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant"] %>
+      <% job_roles = ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant", "Other"] %>
       <ul class="list-group">
         <%= search_form_for @search, :class => 'filters_click' do |f| %>
           <% job_roles.each do |role| %>
