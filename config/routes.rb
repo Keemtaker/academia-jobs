@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     get 'payment', to: 'jobs#payment'
   end
 
+  get 'success', to: 'jobs#success'
+  get 'cancel', to: 'jobs#cancel'
   get 'about', to: 'pages#about'
   get 'home', to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

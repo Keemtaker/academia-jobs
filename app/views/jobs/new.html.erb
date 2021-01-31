@@ -9,14 +9,14 @@
     <div class="form-group">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
-        <%= f.input :employer,  :label => "Name of Academic Institution", required: true %>
+        <%= f.input :employer,  :label => "Name of Academic Institution" %>
       </div>
     </div>
 
     <div class="form-group">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
-        <%= f.input :email,  :label => "Contact Email", required: true %>
+        <%= f.input :email,  :label => "Contact Email", placeholder: "Stays Private. We will send a confirmation email here" %>
       </div>
     </div>
 
@@ -37,14 +37,14 @@
     <div class="form-group">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
-        <%= f.input :city, :label => "Job location" %>
+        <%= f.input :city, :label => "Job location", placeholder: "What city is the job located" %>
       </div>
     </div>
 
     <div class="form-group">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
-        <%= f.input :country, priority: [ "United Kingdom" ], :label => "Country" %>
+        <%= f.input :country, :label => "Country" %>
       </div>
     </div>
 
@@ -58,7 +58,7 @@
     <div class="form-group">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
-        <%= f.input :job_type, collection: ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant" ], :label => "Job Type" %>
+        <%= f.input :job_type, collection: ["Phd", "Postdoc", "Lecturer", "Professor", "Associate Professor", "Researcher", "Assistant Researcher", "Tenure Track", "Engineer", "Management", "Consultant", "Other"], :label => "Job Type" %>
       </div>
     </div>
 
@@ -67,14 +67,14 @@
       <div class="col-md-9">
         <%= f.input :job_field, collection: ["Agricultural Science", "Anthropology", "Architecture and Design", "Arts and Culture", "Biology", "Business and Economics", "Chemistry",
           "Computer Science", "Education", "Engineering", "Geosciences", "History", "Law", "Linguistics", "Literature", "Mathematics", "Medicine", "Philosophy",
-          "Physics", "Political Science", "Psychology", "Social Science", "Space Science", "Theology"], :label => "Job Field" %>
+          "Physics", "Political Science", "Psychology", "Social Science", "Space Science", "Theology", "Other"], :label => "Job Field" %>
       </div>
     </div>
 
     <div class="form-group form-group--inactive show-job-url">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
-        <%= f.input :job_application_url, :label => "Job Url", placeholder: "Applicants will go to the URL you specify to apply for this job.", required: true %>
+        <%= f.input :job_application_url, :label => "Application Url", placeholder: "Applicants will go to the URL you specify to apply for this job." %>
       </div>
     </div>
 
@@ -90,7 +90,7 @@
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
         <%= f.input :application_deadline, as: :date, html5: true, input_html: { value: (Time.now + 60.days).strftime('%Y-%m-%d'), min: Time.now.strftime('%Y-%m-%d'),
-        max: (Time.now + 120.days).strftime('%Y-%m-%d')}, :label => "Application deadline"  %>
+        max: (Time.now + 90.days).strftime('%Y-%m-%d')}, :label => "Duration of Job Post (The default is 60 days but you can have it posted 90 days)"  %>
       </div>
     </div>
 
@@ -98,7 +98,9 @@
     <br>
     <div class="form-group">
       <div class="col-md-4">
-        <%= f.button :submit, "View Order", class: "btn btn-md btn-block btn-success"%>
+        <%= f.button :submit, "Pay and Post the Job", class: "btn btn-md btn-block btn-success"%>
+        <br>
+        <p>You will pay securely through <%= link_to "Stripe", 'https://stripe.com', target:"_blank" %>, which is the most secure platform payments provider</p>
       </div>
     </div>
   </div>

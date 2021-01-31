@@ -4,6 +4,15 @@ class Job < ApplicationRecord
   after_validation :set_slug, only: [:create, :update]
 
   validates :employer, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
+  validates :job_type, presence: true
+  validates :job_field, presence: true
+  validates :job_application_url, presence: true
+  validates :email, presence: true
+
 
   def to_param
     "#{id}-#{slug}"
