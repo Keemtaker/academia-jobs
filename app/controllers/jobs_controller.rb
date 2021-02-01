@@ -47,6 +47,8 @@ class JobsController < ApplicationController
 
   def success
     @job = Job.find_by(checkout_session_id: params[:session_id])
+    mail = EmployerMailer.with(job: @job).job_post_confirmation
+    mail.deliver_now
     redirect_to job_path(@job)
     flash[:notice] = "You have successfully posted a Job"
   end
