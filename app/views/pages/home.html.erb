@@ -1,61 +1,53 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+<head>
+  <meta name="description" content="Find academic jobs and accelerate your academic career. Quicly post academic jobs. Recruit the best academic professionals">
+  <title>Academic Jobs and Positions</title>
+</head>
 
-    <title>Academic Jobs and Positions</title>
-  </head>
-
-  <body>
-    <main role="main">
-      <section class="jumbotron-home text-center" style="background-color: seashell;">
-        <div class="container">
-          <h1 class="jumbotron-heading">ACADEMIA JOBS</h1>
-          <p class="lead text-muted">This is an academic career portal that connects academic institutions with academic talent. A simplified platform to find and list academic jobs</p>
-          <p>
-            <%= link_to "Post a Job for €450", new_job_path, class: "btn btn-primary my-2" %>
-            <%= link_to "Find jobs", jobs_path, class: "btn btn-secondary my-2" %>
-          </p>
-        </div>
-      </section>
-      <br>
-      <div class="col-sm-8 offset-sm-2">
-        <h2>Recent Academic Jobs</h2>
-        <div class="jobs-index">
-          <% @jobs.each do |job| %>
-            <%= link_to job_path(job) do %>
-              <div class="card" style="margin-bottom: 30px;">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-2" style="align-self: center;">
-                      <% if job.logo.attached? %>
-                        <%= cl_image_tag job.logo.key, class: "show-logo" %>
-                      <% else %>
-                        <%= image_tag "fallback.png", class: "show-logo" %>
-                      <% end %>
-                    </div>
-                    <div class="col-sm-8" style="margin-top: 15px;">
-                      <h5><%= job.title %></h5>
-                      <span class="job-info">
-                        <h5 style="color: #5DB1D1;"><%= job.employer %></h5>
-                        <h5><%= job.city %></h5>
-                        <h5><%= job.country_name %></h5>
-                      </span>
-                    </div>
+  <main role="main">
+    <section class="jumbotron-home text-center" style="background-color: seashell;">
+      <div class="container">
+        <h1 class="jumbotron-heading">ACADEMIA JOBS</h1>
+        <p class="lead text-muted">This is an academic career portal that connects academic institutions with academic talent. A simplified platform to find and list academic jobs</p>
+        <p>
+          <%= link_to "Post a Job for €450", new_job_path, class: "btn btn-primary my-2" %>
+          <%= link_to "Find jobs", jobs_path, class: "btn btn-secondary my-2" %>
+        </p>
+      </div>
+    </section>
+    <br>
+    <div class="col-sm-8 offset-sm-2">
+      <h2>Recent Academic Jobs</h2>
+      <div class="jobs-index">
+        <% @jobs.each do |job| %>
+          <%= link_to job_path(job) do %>
+            <div class="card" style="margin-bottom: 30px;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-2" style="align-self: center;">
+                    <% if job.logo.attached? %>
+                      <%= cl_image_tag job.logo.key, class: "show-logo" %>
+                    <% else %>
+                      <%= image_tag "fallback.png", class: "show-logo" %>
+                    <% end %>
+                  </div>
+                  <div class="col-sm-8" style="margin-top: 15px;">
+                    <h5><%= job.title %></h5>
+                    <span class="job-info">
+                      <h5 style="color: #5DB1D1;"><%= job.employer %></h5>
+                      <h5><%= job.city %></h5>
+                      <h5><%= job.country_name %></h5>
+                    </span>
                   </div>
                 </div>
               </div>
-            <% end %>
+            </div>
           <% end %>
-        </div>
+        <% end %>
       </div>
-      <div class="col-sm-2 offset-sm-5">
-        <%= link_to "View all Jobs", jobs_path, class: "btn btn-outline-primary btn-block" %>
-      </div>
-      <br>
-    </main>
-  </body>
-</html>
+    </div>
+    <div class="col-sm-2 offset-sm-5">
+      <%= link_to "View all Jobs", jobs_path, class: "btn btn-outline-primary btn-block" %>
+    </div>
+    <br>
+  </main
 
