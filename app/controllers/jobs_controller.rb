@@ -49,7 +49,7 @@ class JobsController < ApplicationController
     mail = EmployerMailer.with(job: @job).job_post_confirmation
     mail.deliver_now
     redirect_to job_path(@job)
-    flash[:notice] = "You have successfully posted a Job"
+    flash[:notice] = "You have successfully posted a Job and confirmation details will be sent to #{@job.email}"
   end
 
   def cancel

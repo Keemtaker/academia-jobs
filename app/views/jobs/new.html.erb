@@ -94,8 +94,8 @@
     <div class="form-group">
       <label class="col-md-1 control-label"></label>
       <div class="col-md-9">
-        <%= f.input :application_deadline, as: :date, html5: true, input_html: { value: (Time.now + 60.days).strftime('%Y-%m-%d'), min: Time.now.strftime('%Y-%m-%d'),
-        max: (Time.now + 90.days).strftime('%Y-%m-%d')}, :label => "Duration of Job Post (The default is 60 days but you can have it posted 90 days)"  %>
+        <%= f.input :application_deadline, as: :date, html5: true, input_html: {min: Time.now.strftime('%Y-%m-%d'),
+        max: (Time.now + 90.days).strftime('%Y-%m-%d')}, :label => "Duration of Job Post (You can have it posted for upto 90 days)"  %>
       </div>
     </div>
 
