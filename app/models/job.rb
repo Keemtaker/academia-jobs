@@ -12,6 +12,7 @@ class Job < ApplicationRecord
   validates :job_field, presence: true
   validates :job_application_url, presence: true
   validates :email, presence: true
+  validates :application_deadline, presence: true
 
 
   def to_param
