@@ -271,7 +271,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   cloudinary
-  country_select
+  country_select (~> 4.0)
   dotenv-rails
   font-awesome-sass
   jbuilder (~> 2.7)

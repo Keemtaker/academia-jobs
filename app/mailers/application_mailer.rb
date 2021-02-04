@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'tumacareers@gmail.com'
+  default from: 'info@academiajobs.page'
   layout 'mailer'
 end
