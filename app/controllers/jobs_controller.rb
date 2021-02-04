@@ -16,7 +16,7 @@ class JobsController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         price_data: {
-          unit_amount: 100,
+          unit_amount: 45000,
           currency: 'eur',
           product_data: {
             name: @job.title,
