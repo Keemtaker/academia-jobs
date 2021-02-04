@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   def index
-    @search = Job.ransack(params[:q])
+    @search = Job.where("payment_completed = true").ransack(params[:q])
     @jobs = @search.result(distinct: true).order("id DESC")
   end
 
@@ -16,11 +16,10 @@ class JobsController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         price_data: {
-          unit_amount: 45000,
+          unit_amount: 100,
           currency: 'eur',
           product_data: {
             name: @job.title,
-            images: ['https://i.imgur.com/EHyR2nP.png'],
           },
         },
         quantity: 1,
@@ -56,7 +55,7 @@ class JobsController < ApplicationController
   def cancel
     @job = Job.find_by(checkout_session_id: params[:session_id])
     redirect_to root_path
-    flash[:alert] = "The Job posting did not complete successfully. You can try again or contact us for support"
+    flash[:alert] = "The Job posting did not complete successfully. You can try again or contact us at info@academiajobs.page for support"
   end
 
   private

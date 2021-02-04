@@ -11,9 +11,9 @@
       <div class="row">
         <div class="col-sm-2" style="margin-bottom: 30px;">
           <% if @job.logo.attached? %>
-            <%= cl_image_tag @job.logo.key, class: "show-logo" %>
+            <%= cl_image_tag @job.logo.key, alt: @job.employer, class: "show-logo" %>
           <% else %>
-            <%= image_tag "fallback.png", class: "show-logo" %>
+            <%= image_tag "fallback.png", alt: "academia-jobs-fallback", class: "show-logo" %>
           <% end %>
         </div>
         <div class="col-sm-8">
