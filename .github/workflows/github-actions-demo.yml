@@ -19,4 +19,4 @@ jobs:
   Second-Job-Test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "It works nice"
+      - run: echo "It works nice!"
