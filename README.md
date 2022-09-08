@@ -1,1 +1,1 @@
-This rails app is an academic job website.
+This rails app is an academic job website
